@@ -1,7 +1,7 @@
-foo(a) {
+function foo(a) {
   return bar(a, a);
 }
 
-bar() {
+function bar() {
   return foo();
 }
