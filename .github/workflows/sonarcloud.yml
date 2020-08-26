@@ -16,6 +16,9 @@ jobs:
             - name: Echo GITHUB_SHA
               run: echo $GITHUB_SHA
 
+            - name: cat GITHUB_EVENT_PATH
+              run: cat $GITHUB_EVENT_PATH
+
             - name: SonarCloud Scan
               uses: sonarsource/sonarcloud-github-action@master
               with:
