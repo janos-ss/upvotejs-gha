@@ -13,18 +13,15 @@ jobs:
               with:
                   fetch-depth: 0
 
-            - name: Echo GITHUB_SHA
-              run: echo $GITHUB_SHA
-
             - name: SonarCloud Scan
               uses: sonarsource/sonarcloud-github-action@master
               with:
                   args: >
-                      -Dsonar.projectName=test-from-actions-${{ github.event.pull_request.head.sha }}
-                      -Dsonar.host.url=https://janos.eu.ngrok.io
+                      -Dsonar.host.url=https://squad-3-core.sc-dev.io
                       -Dsonar.organization=janos-ss
                       -Dsonar.projectKey=janos-ss_upvotejs-gha
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   #SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-                  SONAR_TOKEN: 15648a42952e18e7cdaca527ef38012821873dd0
+                  #SONAR_TOKEN: 15648a42952e18e7cdaca527ef38012821873dd0
+                  SONAR_TOKEN: 62a063350f1563375b824a8359ff88bb64a7d4ba
